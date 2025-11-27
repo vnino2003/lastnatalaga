@@ -284,53 +284,63 @@ class Router
      * @param string $route
      * @return void
      */
-    private function execute_callback($url, $route)
-    {
-        $matches = [];
-        if (preg_match($this->convert_to_regex_pattern($route['url'], $route['constraints']), $url, $matches)) {
-            array_shift($matches);
+private function execute_callback($url, $route)
+{
+    $matches = [];
+    if (preg_match($this->convert_to_regex_pattern($route['url'], $route['constraints']), $url, $matches)) {
+        array_shift($matches);
 
-            $callback = $route['callback'];
+        $callback = $route['callback'];
 
-            if (is_string($callback)) {
-                $controller = '';
-                $method = 'index';
+        if (is_string($callback)) {
+            $controller = '';
+            $method = 'index';
 
-                if (strpos($callback, '::') !== false) {
-                    [$controller, $method] = explode('::', $callback);
-                } elseif (strpos($callback, '->') !== false) {
-                    [$controller, $method] = explode('->', $callback);
-                } elseif (strpos($callback, '@') !== false) {
-                    [$controller, $method] = explode('@', $callback);
-                } else {
-                    $controller = $callback;
-                    $method = 'index';
-                }
-
-                $controller_file = APP_DIR . 'controllers/' . ucfirst($controller) . '.php';
-
-                if (file_exists($controller_file)) {
-
-                    require_once($controller_file);
-
-                    $instance = new $controller();
-                    if (method_exists($instance, $method)) {
-                        call_user_func_array([$instance, $method], $matches);
-                    } else {
-                        throw new RuntimeException("Method {$controller}->{$method} does not exist.");
-                    }
-                } else {
-                    throw new RuntimeException("Controller {$controller} does not exist.");
-                }
-            } elseif (is_callable($callback)) {
-                call_user_func_array($callback, array_values($matches));
+            // Determine controller and method
+            if (strpos($callback, '::') !== false) {
+                [$controller, $method] = explode('::', $callback);
+            } elseif (strpos($callback, '->') !== false) {
+                [$controller, $method] = explode('->', $callback);
+            } elseif (strpos($callback, '@') !== false) {
+                [$controller, $method] = explode('@', $callback);
             } else {
-                throw new RuntimeException('Invalid callback.');
+                $controller = $callback;
             }
 
-            return;
+            // Convert namespace-like controller to file path
+            $controller_file = APP_DIR . 'controllers/' . str_replace('\\', '/', $controller) . '.php';
+
+            if (file_exists($controller_file)) {
+                require_once($controller_file);
+
+                // If namespaced, use fully-qualified class name
+                $fully_qualified_controller = $controller;
+
+                if (class_exists($fully_qualified_controller)) {
+                    $instance = new $fully_qualified_controller();
+                } else {
+                    // fallback if no namespace used
+                    $class_name = basename(str_replace('\\', '/', $controller));
+                    $instance = new $class_name();
+                }
+
+                if (method_exists($instance, $method)) {
+                    call_user_func_array([$instance, $method], $matches);
+                } else {
+                    throw new RuntimeException("Method {$controller}->{$method} does not exist.");
+                }
+            } else {
+                throw new RuntimeException("Controller {$controller} does not exist.");
+            }
+        } elseif (is_callable($callback)) {
+            call_user_func_array($callback, array_values($matches));
+        } else {
+            throw new RuntimeException('Invalid callback.');
         }
+
+        return;
     }
+}
 
     /**
      * Initiate Request

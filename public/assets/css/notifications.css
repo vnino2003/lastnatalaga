@@ -1,0 +1,56 @@
+.custom-toast {
+    position: fixed;
+    top: 20px; /* adjust if needed */
+    left: 50%;
+    transform: translateX(-50%) translateY(-20px); /* center horizontally and keep slide animation */
+    min-width: 320px; /* slightly bigger */
+    background: #007bff; /* nice blue */
+    color: #fff; /* white text for contrast */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    opacity: 0;
+    transition: all 0.4s ease;
+    z-index: 2000;
+    padding: 16px 24px; /* adjusted padding for "sakto" size */
+    overflow: hidden;
+}
+
+.custom-toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0); /* keep centered when shown */
+}
+
+.toast-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.toast-content .icon {
+    font-size: 24px; /* slightly bigger */
+}
+
+.toast-content span {
+    flex: 1;
+    font-size: 16px; /* slightly bigger text */
+}
+
+.btn-close {
+    background: transparent;
+    border: none;
+    font-size: 16px;
+    color: #fff;
+}
+
+.toast-progress {
+    height: 5px; /* slightly bigger */
+    width: 0;
+    background: #0056b3; /* darker blue for progress */
+    border-radius: 0 0 4px 4px;
+    animation: progress 4s linear forwards;
+}
+
+@keyframes progress {
+    from { width: 0; }
+    to { width: 100%; }
+}

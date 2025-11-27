@@ -45,6 +45,7 @@ define('PREVENT_DIRECT_ACCESS', TRUE);
  * 
  * NO TRAILING SLASH!
  */
+
 	$system_path 			= 'scheme';
 
 /*
@@ -83,5 +84,7 @@ define('PUBLIC_DIR', $public_folder);
  * Setup done? Then Hurray!
  * ------------------------------------------------------
  */
+require_once ROOT_DIR . 'vendor/autoload.php';
+
 require_once SYSTEM_DIR . 'kernel/LavaLust.php';
 ?>

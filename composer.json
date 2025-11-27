@@ -1,0 +1,10 @@
+{
+    "require": {
+        "phpmailer/phpmailer": "^7.0",
+        "paymongo/paymongo-php": "^0.0.0",
+        "guzzlehttp/guzzle": "^7.10",
+        "google/apiclient": "2.13",
+        "google/analytics-data": "^0.23.1",
+        "php": "^8.0"
+    }
+}
