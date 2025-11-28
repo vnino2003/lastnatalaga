@@ -1,19 +1,17 @@
-# System
 .DS_Store
 
-# Composer dependencies
-/vendor/
+app/vendor/*
 
-# Runtime / temp files
-/runtime/*
+runtime/*
 !runtime/.htaccess
 !runtime/index.html
 
-# IDE files
+# IDE Files
+#-------------------------
 /nbproject/
-/.idea/*
+.idea/*
 
-# Sublime Text cache files
+## Sublime Text cache files
 *.tmlanguage.cache
 *.tmPreferences.cache
 *.stTheme.cache
