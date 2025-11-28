@@ -84,7 +84,7 @@ define('PUBLIC_DIR', $public_folder);
  * Setup done? Then Hurray!
  * ------------------------------------------------------
  */
-require_once ROOT_DIR . 'vendor/autoload.php';
+// require_once ROOT_DIR . 'vendor/autoload.php';
 
 require_once SYSTEM_DIR . 'kernel/LavaLust.php';
 ?>
