@@ -1,19 +1,17 @@
+# Ignore vendor folder
+/vendor/
+
+# OS / IDE
 .DS_Store
-
-app/vendor/*
-
-runtime/*
-!runtime/.htaccess
-!runtime/index.html
-
-# IDE Files
-#-------------------------
-/nbproject/
-.idea/*
-
-## Sublime Text cache files
+nbproject/
+.idea/
 *.tmlanguage.cache
 *.tmPreferences.cache
 *.stTheme.cache
 *.sublime-workspace
 *.sublime-project
+
+# Runtime / cache
+runtime/*
+!runtime/.htaccess
+!runtime/index.html
