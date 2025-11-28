@@ -77,10 +77,10 @@ $config['ENVIRONMENT']             = 'development';
 |	http://example.com/
 |
 | WARNING: You MUST set this value!
-|
-*/
-$config['base_url'] 				= 'http://localhost/finalProject_SIA_WEB/';
+// |$config['base_url'] 				= 'http://localhost/finalProject_SIA_WEB/';
 
+*/
+$config['base_url'] 				= 'https://mocart.onrender.com/';
 /*
 |--------------------------------------------------------------------------
 | Index File
