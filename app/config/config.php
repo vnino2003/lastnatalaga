@@ -117,7 +117,8 @@ $config['log_dir']                  = 'runtime/logs/';
 | package auto-loader script in app/vendor/autoload.php.
 |
 |	$config['composer_autoload'] = FALSE;
-|
+|$config['composer_autoload'] = ROOT_DIR . 'vendor/autoload.php';
+
 | Or if you have your vendor/ directory located somewhere else, you
 | can opt to set a specific path as well:
 |
@@ -128,7 +129,7 @@ $config['log_dir']                  = 'runtime/logs/';
 | Note: This will NOT disable or override the LavaLust-specific
 |	autoloading (app/config/autoload.php)
 */
-$config['composer_autoload'] = ROOT_DIR . 'vendor/autoload.php';
+|	$config['composer_autoload'] = FALSE;
 
 /*
 |--------------------------------------------------------------------------
