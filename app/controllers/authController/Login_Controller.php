@@ -17,7 +17,6 @@ use Google\Service\Oauth2;
     {
         parent::__construct();
         $this->call->model('AuthModel');
-         $this->call->library('session');
     }
 
     public function Login_Form(){
