@@ -80,7 +80,7 @@ $config['ENVIRONMENT']             = 'development';
 // |$config['base_url'] 				= 'http://localhost/finalProject_SIA_WEB/';
 
 */
-$config['base_url'] 				= 'https://mocart.onrender.com/';
+$config['base_url'] 				= 'https://mocart.onrender.com';
 /*
 |--------------------------------------------------------------------------
 | Index File
