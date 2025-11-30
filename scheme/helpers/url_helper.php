@@ -84,19 +84,23 @@ if ( ! function_exists('redirect'))
 	 * @param boolean $permanent
 	 * @return string
 	 */
-	function redirect($uri = '', $permanent = false, $exit = true)
-	{
-		if ( ! preg_match('#^(\w+:)?//#i', $uri))
-		{
-			$uri = site_url($uri);
-		}
-		if (headers_sent() === false)
-		{
-			header('Location: ' . $uri, true, ($permanent === true) ? 301 : 302);
-		}
-		($exit === true) ?? exit();
-	}
+function redirect($uri = '', $permanent = false, $exit = true)
+{
+    if (!preg_match('#^(\w+:)?//#i', $uri))
+    {
+        $uri = site_url($uri);
+    }
+
+    if (headers_sent() === false)
+    {
+        header('Location: ' . $uri, true, ($permanent === true) ? 301 : 302);
+    }
+
+    if ($exit === true) {
+        exit();
+    }
 }
+
 
 if ( ! function_exists('load_js'))
 {
