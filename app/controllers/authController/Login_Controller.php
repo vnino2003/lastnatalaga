@@ -76,7 +76,7 @@ public function loginUser() {
         return;
     }
 
-    $secret = '6LeZYPorAAAAADg0bDQ_8r_kjiL7cDXI46YUMjO-';
+    $secret = '6LcscBwsAAAAACzgaVeH6xDMWxRIH7AC1hkOSJDc';
     $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret={$secret}&response={$recaptcha}");
     $responseKeys = json_decode($response, true);
 
