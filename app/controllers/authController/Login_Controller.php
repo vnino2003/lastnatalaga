@@ -273,7 +273,7 @@ public function googleRedirect() {
     $client = new GoogleClient();
     $client->setClientId('667097836235-o068b667r2df513mqik97v5ch4csngf4.apps.googleusercontent.com');
     $client->setClientSecret('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');
-$client->setRedirectUri('http://localhost/finalProject_SIA_WEB/index.php/login/googleCallback');
+$client->setRedirectUri('https://mocart.onrender.com/login/googleCallback');
     $client->addScope('email');
     $client->addScope('profile');
 
@@ -289,7 +289,7 @@ public function googleCallback() {
     $client = new GoogleClient();
     $client->setClientId('667097836235-o068b667r2df513mqik97v5ch4csngf4.apps.googleusercontent.com');
     $client->setClientSecret('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');
-$client->setRedirectUri('http://localhost/finalProject_SIA_WEB/index.php/login/googleCallback');
+$client->setRedirectUri('https://mocart.onrender.com/index.php/login/googleCallback');
 
     if (isset($_GET['code'])) {
 
