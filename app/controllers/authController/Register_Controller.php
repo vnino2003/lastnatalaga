@@ -28,6 +28,8 @@ use Google\Service\Oauth2;
     }
 
     public function createUser() {
+        ob_start();
+
         $this->form_validation
             ->name('username')->required()->max_length(50)
             ->name('email')->required()->valid_email()
@@ -46,16 +48,22 @@ use Google\Service\Oauth2;
 
         if ($password !== $confirm) {
             setMessage('danger','Passwords do not match!');
-            redirect('/register'); return;
+ob_end_clean();
+redirect('/register');
+exit;
         }
 
         if ($this->AuthModel->findByEmail($email)) {
             setMessage('danger','Email already exists!');
-            redirect('/register'); return;
+ob_end_clean();
+redirect('/register');
+exit;
         }
         if ($this->AuthModel->findByUsername($username)) {
             setMessage('danger','Username already exists!');
-            redirect('/register'); return;
+ob_end_clean();
+redirect('/register');
+exit;
         }
 
         // Insert user
