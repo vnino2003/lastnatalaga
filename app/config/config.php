@@ -130,7 +130,7 @@ $config['log_dir']                  = 'runtime/logs/';
 |	autoloading (app/config/autoload.php)
 */
 
-$config['composer_autoload'] = 'FALSE';
+$config['composer_autoload'] = ROOT_DIR . 'vendor/autoload.php';
 
 /*
 |--------------------------------------------------------------------------
