@@ -101,7 +101,7 @@ function redirect($uri = '', $permanent = false, $exit = true)
     }
 }
 
-
+}
 if ( ! function_exists('load_js'))
 {
 	/**
