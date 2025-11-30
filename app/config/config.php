@@ -130,7 +130,7 @@ $config['log_dir']                  = 'runtime/logs/';
 |	autoloading (app/config/autoload.php)
 */
 
-$config['composer_autoload'] = FALSE;
+$config['composer_autoload'] = TRUE;
 /*
 |--------------------------------------------------------------------------
 | Allowed URL Characters
