@@ -106,8 +106,8 @@ public function loginUser() {
         }
         // ✅ Redirect based on role
         if ($user['role'] === 'admin') {
-            redirect(site_url('/admin/products'));
                     setMessage('success', 'Welcome back, admin'  . '!');
+            redirect(site_url('/admin/products'));
 
         } else {
             redirect('/');
