@@ -91,7 +91,7 @@
                             <img src="<?= BASE_URL ;?>/public/assets/img/logo/logo.png" alt="">
                             <p>Create your free mocart account</p>
                         </div>
-                        <form action="<?= site_url('register');?>" method="POST">
+                        <form action="<?= base_url('register');?>" method="POST">
                             <div class="form-group">
                                 <label>Username</label>
                                 <input type="text" name="username" class="form-control" placeholder="Your Name">
