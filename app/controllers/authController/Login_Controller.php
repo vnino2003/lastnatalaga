@@ -31,7 +31,7 @@ if ($sessionData['isLoggedIn']) {
     } else {
         redirect('/');
     }
-    return;
+
 }
 
 // Load header (and pass categories automatically)
@@ -51,7 +51,7 @@ public function loginUser() {
     if ($this->form_validation->run() == FALSE) {
         setErrors($this->form_validation->get_errors());
         redirect('/login');
-        return;
+      
     }
 
     $email = $this->io->post('email');
@@ -62,18 +62,18 @@ public function loginUser() {
     if (!$user) {
         setMessage('danger', 'User not found');
         redirect('/login');
-        return;
+        
     }
 
     if (!$user['is_verified']) {
         setMessage('danger', 'Please verify your email first');
         redirect('/login');
-        return;
+        
     }
         if (!$recaptcha) {
         setMessage('danger', 'Please complete the reCAPTCHA');
         redirect('/login');
-        return;
+       
     }
 
     $secret = '6LctdRwsAAAAAOhujknt58i5I3LY9YUSuxh1VC4z';
@@ -83,7 +83,7 @@ public function loginUser() {
     if (!$responseKeys['success']) {
         setMessage('danger', 'reCAPTCHA verification failed. Please try again.');
         redirect('/login');
-        return;
+       
     }
 
     if (password_verify($password, $user['password'])) {
@@ -120,7 +120,7 @@ public function loginUser() {
     } else {
         setMessage('danger', 'Invalid password');
         redirect('/login');
-        return;
+     
     }
 }
 
