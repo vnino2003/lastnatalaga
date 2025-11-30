@@ -107,7 +107,7 @@
                                 <input type="password" name="password" class="form-control" placeholder="Your Password">
                             </div>
                             <div class="form-group mt-3">
-    <div class="g-recaptcha" data-sitekey="6LcscBwsAAAAABHmMbyJ6sV2yTZek9DgJxas9uie"></div>
+    <div class="g-recaptcha" data-sitekey="6LctdRwsAAAAAI0yCoLnapOhLNwP8-lLXG8r7Upm"></div>
 </div>
                             <div class="d-flex justify-content-between mb-4">
                                 <div class="form-check">
