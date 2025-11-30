@@ -64,7 +64,7 @@ $config['VERSION']                 = '4.4.0';
 | -------------------------------------------------------------------
 | Values: development and production
 */
-$config['ENVIRONMENT']             = 'development';
+$config['ENVIRONMENT'] = 'production';
 
 /*
 |--------------------------------------------------------------------------
@@ -90,7 +90,7 @@ $config['base_url'] 				= 'https://mocart.onrender.com/';
 | variable to blank.
 |
 */
-$config['index_page']               = 'index.php';
+$config['index_page']               = '';
 
 /*
 |--------------------------------------------------------------------------
