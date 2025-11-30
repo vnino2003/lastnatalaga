@@ -53,7 +53,7 @@ $router->get('/logout', 'authController/Login_Controller::logout');
 
 //register
 $router->get('/register', 'authController/Register_Controller::Register_Form');
-$router->post('/registerr', 'authController/Register_Controller::createUser');
+$router->post('/register', 'authController/Register_Controller::createUser');
 
 
 $router->post('/setup-admin', 'authController/Register_Controller::createAdmin');
