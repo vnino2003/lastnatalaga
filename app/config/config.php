@@ -80,7 +80,7 @@ $config['ENVIRONMENT'] = 'production';
 // |$config['base_url'] 				= 'http://localhost/finalProject_SIA_WEB/';
 
 */
-$config['base_url'] 				= 'https://lastnatalaga.onrender.com/';
+$config['base_url'] 				= 'https://mocart.onrender.com/';
 /*
 |--------------------------------------------------------------------------
 | Index File
@@ -216,7 +216,7 @@ $config['language'] 				= 'en-US';
 $config['sess_driver']             = 'file';
 $config['sess_cookie_name']        = 'LLSession';
 $config['sess_expiration']         = 7200;
-$config['sess_save_path']          = '/tmp';
+$config['sess_save_path']          = '';
 $config['sess_match_ip']           = FALSE;
 $config['sess_match_fingerprint']  = TRUE;
 $config['sess_time_to_update']     = 300;
