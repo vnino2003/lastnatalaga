@@ -222,6 +222,13 @@ $config['sess_match_fingerprint']  = TRUE;
 $config['sess_time_to_update']     = 300;
 $config['sess_regenerate_destroy'] = TRUE;
 $config['sess_expire_on_close']    = FALSE;
+$config['max_invalid_attempts']    = 5;
+$config['invalid_window']          = 600;
+$config['lock_duration_invalid']   = 900;
+$config['max_session_creations']   = 10;
+$config['creation_window']         = 60;
+$config['lock_duration_creation']  = 120;
+$config['security_file']           = ROOT_DIR . 'runtime/session/session_security.json';
 
 
 /*
