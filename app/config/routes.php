@@ -48,7 +48,7 @@ $router->get('/', 'shopController/Welcome::index');
 
 // Login / Logout
 $router->get('/login', 'authController/Login_Controller::Login_Form');
-$router->post('/login', 'authController/Login_Controller::loginUser');
+$router->post('/logina', 'authController/Login_Controller::loginUser');
 $router->get('/logout', 'authController/Login_Controller::logout');
 
 //register
