@@ -1,5 +1,8 @@
 <?php
 define('PREVENT_DIRECT_ACCESS', TRUE);
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 /**
  * ------------------------------------------------------------------
  * LavaLust - an opensource lightweight PHP MVC Framework
