@@ -107,7 +107,7 @@ public function loginUser() {
         // ✅ Redirect based on role
         if ($user['role'] === 'admin') {
                     setMessage('success', 'Welcome back, admin'  . '!');
-            redirect(site_url('/admin/products'));
+            redirect('/admin/products');
 
         } else {
             redirect('/');
@@ -127,7 +127,7 @@ public function loginUser() {
     // ===== Logout =====
     public function logout() {
         $this->session->unset_userdata(['user_id', 'role', 'username','logged_in']);
-        redirect('/');
+        redirect('/index.php');
     }
 
 public function forgotPasswordForm() {
